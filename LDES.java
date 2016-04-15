@@ -67,7 +67,7 @@ public class LDES {
 		int B_1 = A_2;
 		int A_1 = B_2 ^ f(B_1, key2);
 		int B   = A_1;
-		int A   = B_1 ^ f(B_0, key1);
+		int A   = B_1 ^ f(B, key1);
 		return shift(Integer.parseInt(b2[A]+b2[B], 2), false);
 	}
 	public static int f(int x, int y) {
