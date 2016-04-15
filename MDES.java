@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class LDES {
+public class MDES {
 
 		static String b4[] = {"0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111"};
 		static String b3[] = {"000", "001", "010", "011", "100", "101", "110", "111"};
@@ -95,7 +95,7 @@ public class LDES {
 
 		x = Integer.parseInt(b2[x]+b2[x].substring(1), 2);
 		String I = b3[x ^ y];
-		return sbox.get(I);
+		return Integer.paraseInt(sbox.get(I), 2);
 	}
 	public static int shift(int m, boolean left) {
 		if(left) {
