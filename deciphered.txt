@@ -1,0 +1,11 @@
+Bmplement the cipher described in Vuestion 1 of Part Two above using C++ or Java.
+(1 Mark) The program should be able to do encryption and decryption, and the result is printed out
+in the console.
+The command to run your program should look like the following:
+YourProgram -key N 3 -encrypt 03ICA45
+YourProgram -key N 3 -decrypt 1087IC5
+(1 Mark) Your program should be able to check whether a key is valid or not, if the key is invalid
+then it should print out an error message.
+For example:
+YourProgram -key 4 C -decrypt 1087IC5
+This key is an invalid key. Program is aborted
