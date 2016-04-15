@@ -95,7 +95,7 @@ public class MDES {
 
 		x = Integer.parseInt(b2[x]+b2[x].substring(1), 2);
 		String I = b3[x ^ y];
-		return Integer.paraseInt(sbox.get(I), 2);
+		return Integer.parseInt(sbox.get(I), 2);
 	}
 	public static int shift(int m, boolean left) {
 		if(left) {
