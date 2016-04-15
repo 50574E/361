@@ -45,8 +45,8 @@ public class LDES2 {
 		int key2 = Integer.parseInt(b2[key].substring(1));
 		
 		int AB = shift(msg, true);
-		int A = Integer.parseInt(Integer.toBinaryString(AB).substring(0,2), 2);
-		int B = Integer.parseInt(Integer.toBinaryString(AB).substring(2), 2);
+		int A = Integer.parseInt(b4[AB].substring(0,2), 2);
+		int B = Integer.parseInt(b4[AB].substring(2), 2);
 		int A_1 = B;
 		int B_1 = A ^ f(B, key1);
 		int A_2 = B_1;
