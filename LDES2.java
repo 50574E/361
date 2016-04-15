@@ -19,10 +19,7 @@ public class LDES2 {
 		boolean encryptTrue = "encrypt".equals(args[0]);
 		for(int i = 0; i< 16; i++) {
 			for(int j = 0; j<4; j++) {
-				text = b4[i];
-				key  = b2[j];
-
-	System.out.println(text+" "+key+": "+b4[encrypt(i, j)]);
+	System.out.println(b4[i]+" "+b2[j]+": "+b4[encrypt(i, j)]);
 			}
 		}
 
