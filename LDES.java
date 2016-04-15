@@ -47,7 +47,7 @@ public class LDES {
 		int B_2 = A_1 ^ f(B_1, key2);
 		return shift(Integer.parseInt(b2[B_2]+b2[A_2], 2), false);
 	}
-	public static void decrypt(int ctxt, int key) {
+	public static int decrypt(int ctxt, int key) {
 		// shift left (ctxt)
 		// split into B_2 and A_2
 		// B_1 = A_2
@@ -55,7 +55,17 @@ public class LDES {
 		// B_0 = A_1
 		// A_0 = B_1 ^ f(B_0, key_0)
 		// shift right (A_0, B_0)
-		return;
+		int key1 = Integer.parseInt(b2[key].substring(0,1));
+		int key2 = Integer.parseInt(b2[key].substring(1));
+
+		int BA = shift(ctxt, true);
+		int B_2 = Integer.parseInt(b4[BA].substring(0,2), 2);
+		int A_2 = Integer.parseInt(b4[BA].substring(2), 2);
+		int B_1 = A_2;
+		int A_1 = B_2 ^ f(B_1, key2);
+		int B   = A_1;
+		int A   = B_1 ^ f(B_0, key1);
+		return shift(Integer.parseInt(b2[A]+b2[B], 2), false);
 	}
 	public static int f(int x, int y) {
 		// multiply by 2 and add 1 or 0 (front bit)
