@@ -21,9 +21,12 @@ public class LDES {
 		System.out.println("Message: "+args[1]+" key: "+args[2]);
 			System.out.println(": "+b4[encrypt(text, key)]);
 		}
-		else if ("decrypt".equals(args[0]) {
+		else if ("decrypt".equals(args[0])) {
 		System.out.println("Ctext: "+args[1]+" key: "+args[2]);
-			//System.out.println(": "+b4[decrypt(text, key)]);
+			System.out.println(": "+b4[decrypt(text, key)]);
+		}
+		else {
+			System.out.println("you input is wrong, the arguments should be either encrypt/decrypt and then binary message of length 4 and then key of length 2 everything else will result in this error.");
 		}
 	}
 
