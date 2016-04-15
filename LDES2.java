@@ -1,4 +1,4 @@
-public class LDES {
+public class LDES2 {
 
 		static String b4[] = {"0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111"};
 		static String b2[]  = {"00", "01", "10", "11"};
@@ -17,12 +17,21 @@ public class LDES {
 		int text = Integer.parseInt(args[1], 2);
 		int key  = Integer.parseInt(args[2], 2); // fix arg no.
 		boolean encryptTrue = "encrypt".equals(args[0]);
+		for(int i = 0; i< 16; i++) {
+			for(int j = 0; j<4; j++) {
+				text = b4[i];
+				key  = b2[j];
+
+	System.out.println(text+" "+key+": "+b4[encrypt(i, j)]);
+			}
+		}
+
 		if(encryptTrue) {
-		System.out.println("Message: "+args[1]+" key: "+args[2]);
+		System.out.println("Message: "+args[0]+" key: "+args[1]);
 			System.out.println(": "+b4[encrypt(text, key)]);
 		}
-		else if ("decrypt".equals(args[0]) {
-		System.out.println("Ctext: "+args[1]+" key: "+args[2]);
+		else {
+		System.out.println("Ctext: "+args[0]+" key: "+args[1]);
 			//System.out.println(": "+b4[decrypt(text, key)]);
 		}
 	}
