@@ -46,7 +46,7 @@ public class MDES2 {
 		*/
 		for(int i=0; i<4; i++) {
 			for(int j=0;j<16;j++) {
-				System.out.println(""+b2[i]+" "+b4[j]+" "+b4[encrypt(j,i));
+				System.out.println(""+b2[i]+" "+b4[j]+" "+b4[encrypt(j,i)]);
 			}
 		}	
 	}
