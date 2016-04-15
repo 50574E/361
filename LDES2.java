@@ -17,8 +17,8 @@ public class LDES2 {
 		int text = Integer.parseInt(args[1], 2);
 		int key  = Integer.parseInt(args[2], 2); // fix arg no.
 		boolean encryptTrue = "encrypt".equals(args[0]);
-		for(int i = 0; i< 16; i++) {
-			for(int j = 0; j<4; j++) {
+		for(int j = 0; j< 4; j++) {
+			for(int i = 0; i<16; i++) {
 	System.out.println(b4[i]+" "+b2[j]+": "+b4[encrypt(i, j)]);
 			}
 		}
