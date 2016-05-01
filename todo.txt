@@ -1,0 +1,9 @@
+ .isProbablyPrime() error can probably be fixed by splitting it into steps.
+
+Import random class
+
+fix type mismatch between bigInt and int
+
+fix all the 'powers mod something' places
+
+-> Next stage of debugging
