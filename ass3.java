@@ -1,3 +1,9 @@
+//import java.util.*;
+//import java.lang.*;
+import java.io.*;
+import java.math.BigInteger;
+
+
 public class ass3 {
     public static void main(String[] args) {
         // The file
@@ -9,10 +15,10 @@ public class ass3 {
         return gcd.intValue();
     }
     public boolean isPrime(int a) {
-        return BigInteger.valueOf(a).isProbablyPrime(9);
+        return BigInteger.valueOf(a).isProbablyPrime(4);
     }
     public boolean eWorks(int e, BigInteger sn) {
-        yes = true;
+        boolean yes = true;
         if(e == 0 || e == 1) {
             yes = false;
             return yes;
@@ -24,7 +30,11 @@ public class ass3 {
         return yes;
     }
     public int solveMod(int e, BigInteger sn) {
-        return e ^ (sn-1) % sn // implement!
+        int tempvar = e;
+        for (int i = 2; i<sn; i++) {
+            tempvar = tempvar*e % sn;
+        }
+        return tempvar; // e ^ (sn-1) % sn 
     }
     public int keyGen(int bitLen) {
         // Create Random number generator and use the bitlength specified.
@@ -32,17 +42,17 @@ public class ass3 {
         int p = rng.next(bitLen);
         int q = rng.next(bitLen);
         // Iterate till both p and q are prime
-        boolean pPrime = isPrime(p)
+        boolean pPrime = isPrime(p);
         boolean qPrime = isPrime(q);
         boolean bothPrime = pPrime && qPrime;
         while(!bothPrime) {
             if(!pPrime) {
                 p = rng.next(bitLen);
-                pPrime = isPrime(p)
+                pPrime = isPrime(p);
             }
             if(!qPrime) {
                 q = rng.next(bitLen);
-                qPrime = isPrime(q)
+                qPrime = isPrime(q);
             }
             bothPrime = pPrime && qPrime;
         }
@@ -85,5 +95,8 @@ public class ass3 {
         plaintxt.println(""+m);
         plaintxt.close();
         return m;
+    }
+    public BigInteger readFile(int item, String filename) {
+        // Implement!                                                            Heyo :P
     }
 }
