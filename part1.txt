@@ -1,0 +1,35 @@
+1. Calculate 23^56 mod 29:
+
+We use this methodology throughout so pay attention:
+
+23^56 = (23^2)^28 = (529-29*18)^28 = 7^28
+
+Which gives:
+
+7^28 = 20^14 = 23^7
+
+It is plainly apparent at this point that 23^8 = 23 which can only mean that 23^7 = 1.
+
+--
+2. Calculate 15^36 mod 37
+
+Here we have the pattern 'n^(p-1) mod p' which according to fermats little theorem is 1 if p is a prime and gcd(p,n)=1.
+
+37 is prime and not a divisor of 15 so 15^36 = 1 mod 37.
+
+--
+3. Suppose X = 21 mod 107 and X = 3 mod 163, what is the value of X?
+
+
+
+--
+4. What is the GCD of 537 and 414?
+
+
+
+--
+5. Given X = 401 and Y = 489, find integers A and B such that A*X + B*Y = 1.
+
+
+
+
