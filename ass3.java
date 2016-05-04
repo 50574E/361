@@ -30,8 +30,6 @@ public class ass3 {
         return yes;
     }
     public int solveMod(int e, BigInteger sn) {
-        int tempvar = e;
-        
         return BigInteger.valueOf(e).modPow(sn.add(BigInteger.valueOf(-1)), sn); // e ^ (sn-1) % sn 
     }
     public int keyGen(int bitLen) {
@@ -54,7 +52,7 @@ public class ass3 {
             }
             bothPrime = pPrime && qPrime;
         }
-        // Create N, has to be BigInt since it's the multiple of p and q which can be up to 32 bits. Then find number of divisors (p-1)*(q-1). Then we find e such that gcd(e, divN) = 1.
+        // Create N, has to be BigInt since it's the multiple of p and q both of which can be up to 32 bits. Then find number of divisors (p-1)*(q-1). Then we find e such that gcd(e, divN) = 1.
         BigInteger n    = BigInteger.valueOf(p)*BigInteger.valueOf(q);
         BigInteger divN = n - (p+q-1);
         int e = rng.nextInt(divN);
