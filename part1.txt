@@ -20,15 +20,85 @@ Here we have the pattern 'n^(p-1) mod p' which according to fermats little theor
 --
 3. Suppose X = 21 mod 107 and X = 3 mod 163, what is the value of X?
 
+This is a diophantine equation because the equations:
 
+21 + 107n = X
+ 3 + 163m = X
+
+Compose to form the diophantine equation:
+
+18 = 107n + 163m
+
+We can absorb the minus sign into m since it's a variable.
+
+Solving the equation is easy we just have to make sure it's solvable.
+
+GCD(107, 163) | 18
+
+This checks out because the GCD is 1 (they're both prime). Then we solve it by using euclids algorithm and reversing it:
+
+163 = 107 + 56
+107 = 56 + 51
+ 56 = 51 + 5
+ 51 = 5*10 + 1
+ =>
+1 = 51 - 5*10
+  = 51 - (56-51)*10
+  = 11*(107-56) - 10*56
+  = 11*107 - 21*56
+  = 11*107 - 21*(163-107)
+  = 32*107 - 21*163
+
+now we just multiply by 18
+
+18 * {1 = 32*107 - 21*163)
+
+18 + 3 = 3 + 32*18*107 + 21*18*163
+
+=>
+
+X = 21 - 576*107
+X =  3 - 378*163
+  = -61611
+  =   8153
+Modulo 107*163 = 17441
 
 --
 4. What is the GCD of 537 and 414?
 
+On observation it is clear 3|5+3+7=15 and 9|4+1+4=9 so 537 = 3*179 and 414 = 9*46.
 
+Since 179 is prime* we've clearly found all the prime factors (9 is obviously 3^2 and 46 is 23*2)
+
+So we have the prime factorisations; 537 = 3*179 and 414 = 2*3*3*23 so the GCD is 3.
+
+*: we only have to check 2,3,5,7,9,11 and 13 since 17^2 > 179
+   Checking for divisibility with these numbers can be done with simple arithmetic tricks.
 
 --
 5. Given X = 401 and Y = 489, find integers A and B such that A*X + B*Y = 1.
+
+Another diophantine equation. First we check the GCD(401, 489) = GCD(401, 3*163) = 1.
+
+489 = 401 + 88
+401 = 88*4 + 49
+88 = 49 + 39
+49 = 39 + 10
+39 = 10*3 + 9
+10 = 9 + 1
+ =>
+1 = 10 - 9
+  = 10 - (39 - 10*3)
+  = 4*(49 - 39) - 39
+  = 4*49 - 5*39
+  = 4*49 - 5*(88 - 49)
+  = 9*49 - 5*88
+  = 9*(401 - 88*4) - 5*88
+  = 9*401 - (5+4*9)*88
+  = 9*401 - 41*(489 - 401)
+  = 50*401 - 41*489
+
+So A = 50 and B = -41.
 
 
 
