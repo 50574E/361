@@ -15,7 +15,7 @@ public class ass3 {
         return gcd.intValue();
     }
     public boolean isPrime(int a) {
-        return BigInteger.valueOf(a).isProbablyPrime(4);
+        return BigInteger.valueOf(a).isProbablePrime(4);
     }
     public boolean eWorks(int e, BigInteger sn) {
         boolean yes = true;
@@ -23,7 +23,7 @@ public class ass3 {
             yes = false;
             return yes;
         }
-        if(!(BigInteger.valueOf(e).gcd(sn) == 1)) {
+        if(!(BigInteger.valueOf(e).gcd(sn) == BigInteger.ONE)) {
             yes = false;
             return yes;
         }
@@ -31,10 +31,8 @@ public class ass3 {
     }
     public int solveMod(int e, BigInteger sn) {
         int tempvar = e;
-        for (int i = 2; i<sn; i++) {
-            tempvar = tempvar*e % sn;
-        }
-        return tempvar; // e ^ (sn-1) % sn 
+        
+        return BigInteger.valueOf(e).modPow(sn.add(BigInteger.valueOf(-1)), sn); // e ^ (sn-1) % sn 
     }
     public int keyGen(int bitLen) {
         // Create Random number generator and use the bitlength specified.

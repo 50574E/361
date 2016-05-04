@@ -1,9 +1,24 @@
- .isProbablyPrime() error can probably be fixed by splitting it into steps.
+Send visa application to canberra
+-> Must call embassy!
 
-Import random class
+Yoga Financials!
 
-fix type mismatch between bigInt and int
+Homework assignment in Programming (Friday)
 
-fix all the 'powers mod something' places
+Homework assignment in Databases (Friday=lab and Saturday=ass)
 
--> Next stage of debugging
+Matthilde
+
+Dad money
+
+Fix up computer
+-> Create usb sticks
+
+Create accounts and post on every sailing site!
+
+---------------- Less Urgent ---------------------------
+
+Statistical homework
+
+Rust
+
