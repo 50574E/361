@@ -38,10 +38,16 @@ public class ass4 {
             hash.reset();
             hash.update(msg.getBytes("UTF-8"));
             sha1 = byteArrayToHexString(hash.digest());
+        } catch(NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch(UnsupportedEncodingException e) {
+            e.printStackTrace();
         }
+        /*  This does not work on banshee :(
         catch(NoSuchAlgorithmException|UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+        */
         return sha1.substring(0,4);
     }
 }
